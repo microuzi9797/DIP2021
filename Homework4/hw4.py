@@ -249,7 +249,7 @@ cv2.imwrite("result6.png", img2_low_pass_inverse_Fourier)
 b = 2
 H = (numpy.array([[1, b, 1] ,[b, math.pow(b, 2), b] ,[1, b, 1]])) / math.pow(b + 2, 2)
 img2_low_pass = signal.convolve2d(img2, H, mode = "same")
-cv2.imwrite("result7.jpg", img2_low_pass)
+cv2.imwrite("result7.png", img2_low_pass)
 print("Problem 2 (b) done.")
 # inverse Fourier transform: high-pass filter
 center_row =  img2_height // 2
@@ -262,7 +262,7 @@ cv2.imwrite("result8.png", img2_high_pass_inverse_Fourier)
 # high-pass filter in pixel domain: Laplacian
 H = numpy.array([[0, 1, 0] ,[1, -4, 1] ,[0, 1, 0]])
 img2_high_pass = signal.convolve2d(img2, H, mode = "same")
-cv2.imwrite("result9.jpg", img2_high_pass)
+cv2.imwrite("result9.png", img2_high_pass)
 print("Problem 2 (c) done.")
 # Fourier Transform on sample3.png
 f = numpy.fft.fft2(img3)
